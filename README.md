@@ -1,9 +1,13 @@
 Mobile detector
 ===============
-Detect type of device by information from request
+Detect type of device by information from request.
+## Notes
 
-Installation
-------------
+This extension based on mobiledetect project http://mobiledetect.net/.
+
+See [here] (https://github.com/serbanghita/Mobile-Detect/) and [here] (http://demo.mobiledetect.net/) for more documentation and examples.
+
+## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
@@ -22,10 +26,33 @@ or add
 to the require section of your `composer.json` file.
 
 
-Usage
------
+## Usage
 
-Once the extension is installed, simply use it in your code by  :
+Update config file *config/web.php* or *common/main.php*:
 
 ```php
-<?= \dkeeper\mobiledetect\AutoloadExample::widget(); ?>```
+return [
+    ...
+    'components' => [
+        'mobiledetect' => [
+            'class' => 'dkeeper\mobiledetect\Detect',
+        ],
+    ],
+    ...
+];
+```
+
+Add event handler for detect type of device before run Application
+// path/to/web/index.php
+```php
+$application = new yii\web\Application($config);
+
+Yii::$app->on(\yii\base\Application::EVENT_BEFORE_REQUEST,function($event){
+    Yii::$app->params['detect'] = [
+        'isMobile' => Yii::$app->mobiledetect->isMobile(),
+        'isTablet' => Yii::$app->mobiledetect->isTablet(),
+    ];
+});
+
+$application->run();
+```
