@@ -42,9 +42,9 @@ return [
 ];
 ```
 
-Add event handler for detect type of device before run Application
-// path/to/web/index.php
+Set event handler for detect type of device before run Application
 ```php
+// path/to/web/index.php
 $application = new yii\web\Application($config);
 
 Yii::$app->on(\yii\base\Application::EVENT_BEFORE_REQUEST,function($event){
