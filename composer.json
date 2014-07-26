@@ -1,0 +1,18 @@
+{
+	"name": "dkeeper/yii2-mobiledetect",
+	"description": "Detect type of device by information from request",
+	"type": "yii2-extension",
+	"keywords": ["yii2","extension","mobile detect"],
+	"license": "GPL-3.0+",
+	"authors": [
+		{
+			"name": "DKeeper",
+			"email": "dkapenkin@rambler.ru"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"dkeeper\\mobiledetect\\": ""
+		}
+	}
+}
