@@ -4,6 +4,7 @@
 	"type": "yii2-extension",
 	"keywords": ["yii2","extension","mobile detect"],
 	"license": "GPL-3.0+",
+    "version": "1.0.0",
 	"authors": [
 		{
 			"name": "DKeeper",
